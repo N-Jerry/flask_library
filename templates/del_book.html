@@ -1,0 +1,19 @@
+{% extends "admin_layout.html" %}
+
+{% block title %}
+    Delete book
+{% endblock %}
+
+{% block main %}
+    <form action="/delete_book" method="post">
+        <div class="mb-3">
+            <select name="title">
+                <option disabled selected value = "Title">Title</option>
+                    {%for book in books %}
+                <option value = "{{ book.title }}">{{ book.title }}</option>
+                    {% endfor %}
+            </select>
+        </div>
+        <button class="btn btn-primary" type="submit">delete</button>
+    </form>
+{% endblock %}

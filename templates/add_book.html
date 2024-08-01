@@ -1,0 +1,25 @@
+
+{% extends "admin_layout.html" %}
+
+{% block title %}
+    Add-book
+{% endblock %}
+{% block main %}
+
+     <form action="/add_book" method="post">
+        <div class="mb-3">
+            <input autocomplete="off" autofocus class="form-control mx-auto w-auto" name="title" placeholder="Title" type="text">
+        </div>
+        <div class="mb-3">
+            <input class="form-control mx-auto w-auto" name="author" placeholder="Author" type="text">
+        </div>
+        <div class="mb-3">
+            <input class="form-control mx-auto w-auto" name="genre" placeholder="Genre" type="text">
+        </div>
+          <div class="mb-3">
+            <input class="form-control mx-auto w-auto" name="price" placeholder="Price" type="number" step="0.01">
+        </div>
+        <button class="btn btn-primary" type="submit">ADD</button>
+    </form>
+
+{% endblock %}

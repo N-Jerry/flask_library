@@ -1,0 +1,48 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Home
+{% endblock %}
+
+{% block main %}
+    <caption style="color:blue ; font-size:large"><i>Available books</i></caption>
+    <table class="table table-success table-striped">
+        <thead>
+            <tr>
+            <th>Title</th>
+            <th>Author</th>
+        </tr>
+        </thead>
+        <tbody>
+            {% for book in books %}
+            <tr>
+                <td>{{ book["title"] }}</td>
+                <td>{{ book["author"] }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+
+    </table>
+    <div>
+        <hr />
+        <h3></h3>
+    </div>
+    <caption style="color:blue ; font-size:large"><i>Loaned books</i></caption>
+    <table class="table table-success table-striped">
+        <thead>
+            <tr>
+            <th>Title</th>
+            <th>Author</th>
+        </tr>
+        </thead>
+        <tbody>
+            {% for book in books_on_loan %}
+            <tr>
+                <td>{{ book["title"] }}</td>
+                <td>{{ book["author"] }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+
+    </table>
+{% endblock %}

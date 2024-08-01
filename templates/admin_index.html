@@ -1,0 +1,79 @@
+{% extends "admin_layout.html" %}
+
+{% block title %}
+    Admin-Home
+{% endblock %}
+
+{% block main %}
+    <caption style="color:blue ; font-size:large"><i>All books</i></caption>
+    <table class="table table-success table-striped">
+        <thead>
+            <tr>
+            <th>Title</th>
+            <th>Author</th>
+            <th>Genre</th>
+            <th>price</th>
+            <th>Loanee</th>
+            <th>On_Loan</th>
+        </tr>
+        </thead>
+        <tbody>
+            {% for book in books %}
+            <tr>
+                <td>{{ book["title"] }}</td>
+                <td>{{ book["author"] }}</td>
+                <td>{{ book["genre"] }}</td>
+                <td>{{ book["price"] }}</td>
+                <td>{{ book["loanee"] }}</td>
+                <td>{{ book["on_loan"] }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+
+    </table>
+    <caption style="color:blue ; font-size:large"><i>Loans</i></caption>
+    <table class="table table-success table-striped">
+        <thead>
+            <tr>
+            <th>Title</th>
+            <th>loanee</th>
+            <th>Date</th>
+        </tr>
+        </thead>
+        <tbody>
+            {% for book in loans %}
+            <tr>
+                <td>{{ book["title"] }}</td>
+                <td>{{ book["loanee"] }}</td>
+                <td>{{ book["year"] }}/{{ book["month"] }}/{{ book["day"] }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+
+    </table>
+
+    <caption style="color:blue ; font-size:large"><i>People</i></caption>
+    <table class="table table-success table-striped">
+        <thead>
+            <tr>
+            <th>CardNumber</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>email</th>
+            <th>address</th>
+        </tr>
+        </thead>
+        <tbody>
+            {% for person in people %}
+            <tr>
+                <td>{{ person["card_number"] }}</td>
+                <td>{{ person["firstname"] }}</td>
+                <td>{{ person["lastname"] }}</td>
+                <td>{{ person["email"] }}</td>
+                <td>{{ person["address"] }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+
+    </table>
+{% endblock %}

@@ -1,0 +1,19 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Return
+{% endblock %}
+
+{% block main %}
+    <form action="/returning" method="post">
+        <div class="mb-3">
+            <select name="book">
+                <option disabled selected value = "Book">Book</option>
+                    {%for book in loaned_books %}
+                <option value = "{{ book.title }}">{{ book.title }}</option>
+                    {% endfor %}
+            </select>
+        </div>
+        <button class="btn btn-primary" type="submit">return</button>
+    </form>
+{% endblock %}
